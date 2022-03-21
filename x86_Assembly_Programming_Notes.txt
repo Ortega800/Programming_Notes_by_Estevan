@@ -1,0 +1,302 @@
+
+Assembly Programming
+*********************
+
+; Assembly code format:
+
+
+
+.386     ; Specifies the microprocessor (CPU) type to be used
+
+.Model flat, stdcall
+
+.stack 4096   ; creates a stack, init SP = 0x1000
+
+exitprocess   ; a method that allows assembly to exit code
+
+.data   ; tells assembler to reserve space in the data segment. 
+	; Creates link between varableName and location in memory.
+	; Initializes variable to value given in variable definition.
+
+; Enter variables here
+
+.code   
+
+; start of code segment
+
+mainProcesssName PROC
+
+
+; mainProcessName code here...
+
+
+
+mainProcessName ENDP      ; Ends mainProcessName
+
+
+; Create more prcedure (aka functions) here...
+
+
+
+END mainProcessName    ; Ends the entire file for assembly
+
+
+
+------
+
+; Comment
+
+------
+
+opcode   op1, op2
+
+opcode  : A name for an action to be done by the CPU
+
+op1        :   Destination operand, where the calculation is stored
+
+op2        :   Source operater
+
+-------
+
+In general, all intel processor opcodes are allowed to access at most one memory address.
+
+---
+
+Assemblie's usefulness is in both its' execution speed and efficiency with memory. This language controls the hardware directly. In-line assembly is very efficient for boolean operations.
+
+---
+
+Mov op1, op2   
+
+; op1 <- op2
+
+; Moves contents of op2 to op1. op1 and op2 must be the same size. op2 can be in a register, memory, and a constant. op1 and op2 cannot be in memory at the same time.
+
+---
+
+add op1, op2
+
+; adds: op1 <- op1 + op2.  
+; adds op2 to op1 and stores result in op1.
+
+---
+
+sub op1, op2
+
+; subtracts: op1 <- op1 - op2
+
+---
+
+mul op1
+
+; AX <- AL * op1
+; AX is 16 bit, AL is 8 bit, op1 is 8 bit.
+; if an n digit number is multiplied by another n 
+; digit number, then the result is at most 2 * n digits.
+
+--
+
+neg op1
+
+;negates (reverses the sign of) a number in reg or mem by finding 2's complement
+
+--
+
+cmp op1, op2
+
+; Compares both operand and sets the flag
+
+---
+
+label: dec ax
+
+jmp label
+
+; The jmp operator jumps to the label and executes the line of code with label
+
+---
+
+jge	greater than or equal to
+jle	less than or equal to
+jg	greater than
+jl	less than
+je	equal to
+jz	equal to
+jne	not equal to
+js	if SF = 1, previous operation was negative
+jcxz	if CX equals zero
+jecxz	if ECX equals zero
+jrcxz	if RCX equals zero (64-bit mode)
+jnz	if zero flag equals zero
+
+---
+
+The stack is a "last-in, first-out" (LIFO) data structure. One can 'push' values on top of the stack and 'pop' values off of the stack. Addresses to previous procedures, nested loops, or registers can be 'saved' onto the stack.
+
+push registerName
+
+pop registerName
+
+---
+
+.data
+
+variableName DB dataValue ; "define byte size", 8 bits
+
+variableName DW dataValue ; "define word size", 16 bits
+
+variableName DD dataValue ; "define double word size", 32 bits
+
+variableName DQ dataValue ; "define quad word size", 64 bits
+
+
+
+Data-Type	Description
+
+BYTE		8  bit unsigned integer
+SBYTE		8  bit signed integer
+WORD		16 bit unsigned integer
+SWORD		16 bit signed integer
+DWORD		32 bit unsigned integer
+SDWORD		32 bit signed integer
+FWORD		48 bit integer
+QWORD		64 bit integer
+
+DB		8  bit integer or real
+DW		16 bit integer or real
+DD		32 bit integer or real
+DQ		64 bit integer or real
+DT		80 bit integer
+
+---
+
+Extends signed integer into another register for idiv and imul operations
+
+cbw	;Sign-extends register AL into AX
+cwd	;Sign-extends register AX into DX
+cdq	;Sign-extends register EAX into EDX
+
+---
+
+"StringStuff", 0
+
+; The characters are inside the qoute, the null character is the number zero at the end.
+
+---
+
+stringName DB "StringStuff", asciiCharOne, asciiCharTwo, 0
+
+This creates a string variable. Ascii characters can be written in hexadecimal, decimal, or binary.
+
+---
+
+Constant variable values:
+
+if no radix is given, and the first character is numeric, the value is assumed to be a constant in decimal.
+
+---
+
+little-endian (LE)
+
+A computer system where the the least significant byte is stored in the  smallest address. The x86 processor uses little-endian
+
+
+
+big-endian (BE)
+
+A computer system where the the most significant byte is stored in the  smallest address.
+
+---
+
+It is more efficient in assembly to count down in the counter than to count up.
+
+---
+
+Memory access takes many clock cycles, and therefore is inefficient.
+
+---
+
+[Register]
+
+Returns the values in the location of the register
+
+Ex: mov DL, [EBX]
+
+DL is 8 bits, while EBX is 32-bit. [EBX] stores first 8 bits to DL.
+The square brackets is a pointer to memory location.
+
+---
+
+General Purpose registers EAX, EBX, ECX, and EDX overlap with their higher or lower bit counterparts.
+
+---
+
+General purpose registers, their names, and their bit length:
+
+
+32-bit, 16-bit, 8-bit High, 8-bit Low,  Purpose
+
+EAX 	AX 	AH 	    AL		Accumulator
+EBX 	BX 	BH 	    BL		Base Index, Memory Access, Arrays
+ECX 	CX 	CH 	    CL		Counter, Loops and Strings
+EDX 	DX	DH 	    DL		Data Register, Extra Register
+ESI 	SI				Source Index, String Operations
+EDI 	DI				Destination Index, String Operations
+EBP 	BP				Stack Base Pointer, Frame Pointer
+ESP 	SP				Stack pointer, Top address of Stack
+
+
+
+Segment Registers, and Their names:
+
+
+CS	Code Segment
+DS	Data Segment
+SS	Stack Segment
+ES	Extra Data Segment
+FS	Extra Data Segment
+GS	Extra Data Segment
+
+
+---
+
+Flags Register, Shows info about the result of an execution
+
+
+Hex, Flag Name,       Purpose
+
+0    Carry flag:      Set if operation had a carry out
+2    Parity flag:     Reflects the parity of the result of operation
+4    Auxiliary flag:  CPU uses for BCD operations
+6    Zero flag:       Result of the preceding operation equals zero
+7    Sign flag:       Reflects the status of the preceding operation’s sign bit (MSB)
+8    Trace flag:      Setting this flag results in step-by-step execution of the program
+9    Interrupt flag:  Setting this flag enables interrupts
+A    Direction flag:  Setting this flag decrements the index register on string move operations
+B    OF flag:         Operation had an overflow
+
+
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

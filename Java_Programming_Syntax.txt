@@ -1,0 +1,533 @@
+Arrays in Java
+***************
+
+
+dataType[] arrayName = new dataType[numElements];
+
+Creates a static array.
+
+--
+
+arrayName[index] = variable;
+
+Assigns an element in a previously created array.
+
+--
+
+dataType[] arrayName = {var1, var2, var3, ...};
+
+Creates a static array and initializes values.
+
+--
+
+arrayName.length
+
+Returns the length of a one dimensional array. 
+
+Returns the number of rows (length of column) of a two dimensional array.
+
+--
+
+dataType[][] arrayName = new dataType[numRowElements][numColumnElements];
+
+Creates a two-dimensional static array.
+
+--
+
+arrayName[rowIndex][columnIndex] = variable;
+
+Assigns an element in a previously created two-dimensional array.
+
+--
+
+dataType[][] arrayName = {{r0c0, r0c1, r0c2, ...}, {r1c0, r1c1, r1c2, ...}};
+
+Creates a static two-dimensional array and initializes values.
+
+--
+
+arrayName[rowIndex].length
+
+Returns the length of the row in a two-dimensional array.
+
+--
+
+arrayName[rowIndex][columnIndex].length
+
+Returns the length of the depth in a three-dimensional array.
+
+--
+
+dataType[][]...[] arrayName = new dataType[dimOneElements][dimTwoElements]...[dimFinalElements];
+
+Creates an arbitraraly sized multi-dimensional array.
+
+--
+
+for(dataType elementName : arrayName) {System.out.print(elementName);}
+
+Copies elements in the array in memory and prints out all copied elements.
+
+--
+
+import java.util.Arrays;
+
+Arrays.sort(arrayName);
+
+or 
+
+Arrays.sort(arrayName, elementIndexOne, elementIndexTwo);
+
+
+A method that returns a sorted array or sorts specific elements in the array
+
+
+
+Methods (Functions) in Java
+****************************
+
+What is in a method definition?
+
+The new method's name and the block of statements that will execute if the method is called. Parameters are defined as an input to the function. In Java, a method is a function that belongs to a class. Return variables are defined which act as the outputs of the method. A method may have either one or no return variable. It is possible to have more than one method with the same name in the same class as long as they contain different list of parameters. Names for both parameters and arguments don't have to be the same.
+
+A returnType is the data type of the return variable. If a method has no return value, write 'void' for the returnType. 
+
+DataTypes: can be an int, int[], int[][], char, char[], String[], double, float, objectRefVar etc..
+
+Modifiers: Optional labels that allow certain properties or restrictions on the method.
+
+public    : accessible to all classes
+
+private   : only accessible within its' own class
+
+'default' : only accessible in the same package
+
+protected : accessible in the same package and subclasses
+
+final     : cannot be overwritten/modified
+
+static    : Can be accessed without creating an object of the class
+
+abstract  : used in an abstract class and allows the body to be inherited by the subclass
+
+transient : skipped when serializing the object containing them
+
+synchronized   : can only be accessed by one thread at a time
+
+
+
+modifiers returnType methodName(dataType parameterOne, dataType parameterTwo, ...)
+	{
+	
+	//Block of statements that execute if method is called..
+	
+	return variableName;
+
+	}
+
+or
+
+
+
+modifiers void methodName(dataType parameterOne, dataType parameterTwo, ...)
+	{
+	
+	//Block of statements that execute if method is called..
+	
+	}
+	
+
+
+-----
+
+//If the method defintion is in the same class as the method call.
+
+methodName(argumentOne, argumentTwo, ...);
+
+
+//If the method defintion is in a different class as the method call.
+
+className.methodName(argumentOne, argumentTwo, ...);
+
+
+//className is the name of the class that contains the method.
+
+
+
+Calls a method and passes an argument to each parameter. can be an When the method executes, either one or no return value may be outputted. When a method is called, the arguments are copied, method executed, and local variables created in a separate location in memory which is then discarded after the methods return.
+
+Elements in an array can be modified without return when passed into a method because the reference to the array is copied to the parameter, thus both the parameter and argument reference the array.
+
+---
+
+Method overloading is a way of creating multiple implementaion of the same method using the same methodName. When calling a method, the implementaion to be called will be the one where signature matches exactly (methodName, dataType, number of arguments).
+
+
+modifiers dataTypeOne methodName(dataTypeOne parameterOne, dataTypeOne parameterTwo, ...)
+	{
+	
+	//Block of statements that execute if method is called..
+	
+	return variableName;
+
+	}
+
+
+modifiers dataTypeTwo methodName(dataTypeTwo parameterOne, dataTypeTwo parameterTwo, ...)
+	{
+	
+	//Block of statements that execute if method is called..
+	
+	return variableName;
+
+	}
+
+---
+
+What is a library?
+
+A set of methods written to carry out tasks for similar problems which can be used to increase prodoctivity. 
+
+--
+
+What is an API?
+
+a set of tools that allow software to communicate with each other.
+
+--
+
+
+Classes and objects in Java
+****************************
+
+What is a class?
+
+A template with properties and methods that can be used to create an object.
+
+--
+
+What is defined in a class?
+
+Properties that store data, methods that operate on the constructors, and an interface that serves as input/output for an object.
+
+
+modifier class className
+	{
+
+
+	// Properties
+
+		Private dataType variableNameOne;
+		
+		Private dataType variableNameTwo;
+	
+		Private dataType variableNameThree;
+
+	// Constructor is called when the 'new operator is invoked and builds the object
+
+		className()
+			{
+				// code to initialize (build) object. 
+				// Used to set values to variables in properties.
+			}
+
+			
+		className(dataTypeOne parameterOne, dataTypeTwo parameterTwo, ...)
+			{
+				// code to initialize (build) object. 
+				// Used to set values to variables in properties.
+			}
+
+	// Methods with parameters as arguments
+
+		public dataTypeOne methodOne(dataTypeOne parameterOne, dataTypeTwo parameterTwo, ...)
+			{
+				// code to execute
+				
+				return variableName;
+			}
+
+		public dataTypeTwo methodTwo(dataTypeOne parameterOne, ...)
+			{
+				// code to execute
+
+				return variableName;
+			}
+
+		public void methodThree()
+			{
+				// code to execute
+			}
+
+	}
+
+
+
+---
+
+How is an object instantiated, (created)?
+
+className objectRefVar = new className();
+
+The 'new' operator invokes the constructor
+
+The objectRefVar contains the reference to the object
+
+---
+
+Static methods in a class can be used without creating an object
+
+---
+
+Private variables in a class cannot be modified by public methods outside of the variable's class
+
+---
+
+A single file can contain multiple classes, but only one can have a public modifier.
+
+---
+
+If a class has no constructor, then a no argument constructor is built.
+
+--
+
+className objectRefVar;
+
+Creates an object reference variable that can point to a className object.
+
+--
+
+objectRefVar.variableName
+
+refers to the variableName from the object.
+
+--
+
+objectRefVar.method();
+
+Executes a method from the object. Arguments can be passed through the method.
+
+--
+
+'null' is a reference type in Java that does not point to anything.
+'null' is a reserved word in Java.
+
+--
+
+this.variableName;
+
+Refers to the non-static variable in the object.
+
+--
+
+
+
+Scanners in Java
+*****************
+
+import java.util.Scanner;
+
+imports the Scanner class
+
+--
+
+Scanner scannerName = new Scanner(System.in);
+
+Creates a new scanner object that uses keyboard as input
+
+--
+
+List of methods that can be used for scanner objects:
+
+scannerName.nextByte()   : Reads a byte-sized integer
+
+scannerName.nextShort()  : Reads a short integer (16 bit)
+
+scannerName.nextInt()    : Reads a full-sized integer (32 bit)
+
+scannerName.nextLong()   : Reads a long integer (64 bit)
+
+scannerName.nextFloat()  : Reads a Float-type number
+
+scannerName.nextDouble   : Reads a double-type number
+
+scannerName.next()       : Reads a string that ends before a spacebar character
+
+scannerName.nextLine()   : Reads a line that ends before the next-line
+
+scannerName.next().charAt(index) : Reads the char at the index of the next string
+
+scannerName.close()      : closes a scanner object that will no longer be used in memory. Also closes 'System.in' so 'System.in' can no longer be used in the program.
+
+
+Strings in Java
+****************
+
+String stringName = "stringContent";
+
+Creates a string and assigns the content in the string.
+
+--
+
+String stringName = new String();
+
+Creates an empty string.
+
+--
+
+List of methods that can be used for string objects:
+
+stringName.length()        : Returns the length of the string using values 1 - infinity
+
+stringName.charAt(index)   : Returns a character in the index of the argument
+
+stringName.concat(anotherString) : Returns stringName concatinated with anotherString
+
+stringName.toUpperCase()   : Returns stringName in all upper-case letters
+
+stringName.toLowerCase()   : Returns stringName in all lower-case letters
+
+stringName.trim()          : Returns stringName with spacebar characters trimmed on both sides
+
+stringName.substring(beginIndexInclusive, endIndexExclusive) : Returns substring
+
+stringName.equals(anotherString) : Returns true if stringName equals anotherString, case-sensitive
+
+stringName.equalsIgnoreCase(anotherString) : Returns true if stringName equals anotherString, case-insensitive
+
+stringName.compareTo(anotherString) : Returns an integer greater than, less than, or equal to zero to indicate if stringName is greater than, less than, or equal to anotherString
+
+stringName.compareToIgnoreCase(anotherString) : Returns an integer greater than, less than, or equal to zero to indicate if stringName is greater than, less than, or equal to anotherString, case-insensitive
+
+stringName.startsWith(prefix) : Returns true if stringName starts with the prefix
+
+stringName.endsWith(suffix)   : Returns true if stringName ends with the suffix
+
+stringName.contains(subString) : Returns true if subString is in stringName
+
+stringName.valueOf(int)        : Returns a string converted from an integer, float, double, long, char, or boolean
+
+stringName.replace(oldChar, newChar) : Returns a new string with all old chars replaced with new chars
+
+stringName.replaceFirst(oldString, newString) : Returns a new string with the first matching substring replaced
+
+stringName.replaceAll(oldString, newString) : Returns a new string with all matching substrings replaced
+
+stringName.split('delimiter')  : Returns an array of strings where each were separated by a deliminator in the original string
+
+stringName = stringNameOne + stringNameTwo + ..;    : Concatinates multiple strings 
+
+
+Type Conversion in Java
+************************
+aka type-casting
+
+
+Types are organized in a hierarchy from biggest to smallest as shown: 
+
+(Biggest) double, float, long, int, short, byte (Smallest)
+
+---
+
+largerType largerTypeName = smallerTypeName;
+
+Assigns a smaller type to a larger type, no information is lost in the process.
+
+---
+
+smallerType smallerTypeName = (smallerType) largerTypeName;
+
+Converts a larger type to a smaller type, information may be lost this is 
+
+
+Loops in Java
+**************
+
+While(Boolean)
+{
+	//Execute Code
+}
+
+--
+
+do{
+	//Execute Code
+}
+
+while(Boolean);
+
+
+Math Functions in Java
+***********************
+
+import java.lang.Math;
+
+Imports the Math class of java
+
+--
+
+Math.sqrt(double1);
+
+Returns square root
+
+--
+
+Math.sin(radians);
+
+works for sin, cos, tan, asin, acos, and atan trig functions
+
+--
+
+Math.toRadians(degree);
+
+Converts degrees to radians
+
+--
+
+Math.toDegree(radians);
+
+converts radians to degrees
+
+--
+
+Math.log(double);
+
+Log base e (natural log)
+
+--
+
+Math.log10(double);
+
+Log base 10
+
+--
+
+Math.exp(double);
+
+e to the power of double
+
+--
+
+Math.factorial(int);
+
+--
+
+Math.pow(double1, double2);
+
+Returns left number to the power of the right number
+
+--
+
+Math.random();
+
+Returns a randome double between 0 and 1
+
+--
+
+JavaFX
+******
+
+
+
+
+

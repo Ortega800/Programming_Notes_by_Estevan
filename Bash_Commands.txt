@@ -1,0 +1,378 @@
+
+https://devhints.io/bash
+
+Bash Cheat-sheet
+--
+https://www.gnu.org/software/bash/manual/bash.html#Definitions
+
+Bash Reference Manual
+--
+https://en.wikipedia.org/wiki/Unix_filesystem
+
+Unix file-system wiki
+--
+
+What data structure is contained in unix-style directories?
+
+Inodes (,not the files themselves,) that contain the location of an object's data (aka location of the file) and the metadata about that block of data (name, owner, permissions, size, recent time of access, etc).
+
+Analogy: It's like looking at books in the library. You know may know the metadata of the book (title, size, when it was last checked out) and the location (isle 43, at the right end of the 3rd shelf) of the book which you can call the inode, but you still know nothing about what's inside the book until you make the explicit decision to check.
+
+--
+
+What is a filename?
+
+A string of characters used to identify a file
+
+--
+
+What is a superuser?
+
+A special user account that has unrestricted access to all programs and files. aka the "root" or "administrator" account.
+
+--
+
+What is sudo?
+
+A program in unix-like operating systems that enables a user to run programs with security priveleges of another user, with the default being the superuser. Stands for "superuser do" or "substitute user do". Can also be used to run programs as other users other-than the superuser.
+
+--
+What is the sturcture of the directory filesystem?
+
+A tree with a root at the top and leaves at the bottom.
+
+--
+
+What is a builtin?
+
+A command that is executed by Bash itself
+
+--
+
+ls (optional Argument)
+
+Shows what is in current directory
+
+--
+
+ls -a
+
+Shows both hidden and un-hidden files and directories that is in current directory
+
+--
+
+ls -alh
+
+Shows metadata and all in current directory. (aliased in ubuntu as 'll')
+
+--
+
+cd (directory)
+
+Changes directory
+
+--
+
+cd ..
+
+changes to the directory above
+
+--
+
+cd
+
+Takes you to home directory
+
+--
+
+cd ../..
+
+changes to two directories above
+
+--
+
+cd /(Directory Name)
+
+Takes you to this directory no matter where you are. aka
+an absolute path to a directory.
+
+--
+
+When I hit tab once..
+
+Bash auto-completes my command
+
+--
+
+When I double-tap tab..
+
+Bash shows all possible auto-completes for your command
+
+--
+
+ctrl + a, ctrl + e, ctrl + u
+
+Moves curser to beginning of line, Moves curser to end of line, Deletes text before curser
+
+--
+
+ps
+
+Shows relevant processes running on your machine
+
+--
+
+ps -A
+
+shows all processes running on your machine
+
+--
+
+ps aux
+
+shows all precesses running on your machine with metadata
+
+--
+
+(command with output) | (command with input)
+(command with output) |& (command with input)
+
+pipes output from first command to second command,
+Second line pipes output and errors from first command to second command
+
+--
+
+(command with output) > (file name)
+
+Writes output from first command to file
+
+--
+
+echo (text, file, output)
+
+Displays text or file or output to the command line
+
+--
+
+mkdir (directory name)
+
+Creates a new directory
+
+--
+
+rmdir (directory name)
+
+Removes directory
+
+--
+
+alias (new command)='(commandOne); (commandTwo); (commandThree)'
+
+Renames strings of a command with new strings command temporarily until you close the terminal. Used to create shortcuts and abreviating commands.
+Can have as many commands as you like.
+
+--
+
+unalias (option) (alias name)
+
+removes an alias
+
+option:
+
+-a : removes all aliases
+
+--
+
+pwd
+
+Shows the absolute path of the current directory you are in
+
+--
+
+touch (new file)
+
+Creates a new empty file
+
+
+--
+
+mv (folder) (new file name)
+
+This renames an a file to a new folder name
+
+--
+
+mv (folder) (Directory)
+
+This moves a folder to a directory
+
+--
+
+rm (filename)
+
+removes a file
+
+--
+
+cp (filename) (directory)
+
+copies file to a directory
+
+*Use dos2unix command on the directory if you are using windows operating system.
+Simply do,
+
+dos2unix (directory)
+
+This is because windows OS has a newline character at end of directory name.
+
+--
+
+cat (file)
+
+Reads a file and prints to standard output
+
+--
+
+clear
+ctrl + l
+
+Both clear the directory
+
+--
+
+ctrl + c
+
+terminates current command
+
+--
+
+(command output) > (file)
+
+takes command output to overwrites to file
+
+--
+
+(command output) >> (file)
+
+takes command output and appends to file
+
+--
+
+less (file)
+
+Opens large files, use 'space bar' to go to next page, 'b' to previous page, arrow keys to scroll, '/(pattern)' to search for a pattern, 'q' to quit
+
+--
+
+grep (option) (pattern) (file)
+
+searches for a pattern of characters in a file
+
+Options Description
+-c : This prints only a count of the lines that match a pattern
+-h : Display the matched lines, but do not display the filenames.
+-i : Ignores case of letters for matching
+-l : Displays list of a filenames only.
+-n : Display the matched lines and their line numbers.
+-v : This prints out all the lines that do not matches the pattern
+-e exp : Specifies expression with this option. Can use multiple times.
+-f file : Takes patterns from file, one per line.
+-E : Treats pattern as an extended regular expression (ERE)
+-w : Match whole word
+-o : Print only the matched parts of a matching line,
+ with each such part on a separate output line.
+
+-A n : Prints searched line and nlines after the result.
+-B n : Prints searched line and n line before the result.
+-C n : Prints searched line and n lines after before the result.
+
+--
+
+history
+
+Shows history of all previous commands used
+
+--
+
+nano (text-file)
+
+Edits a text-file using nano
+
+--
+
+~/.bashrc
+
+The .bashrc is a config file for the linux terminal. This file executes when Bash terminal is booted up. Typically located in the root folder.
+
+--
+
+find (filter)
+
+Finds files
+
+--
+
+date, cal, time
+
+Shows current date and time, shows current calander, outputs time statistics for an executed command time
+
+--
+
+*****************************
+Bash Scripting
+*****************************
+
+https://linuxconfig.org/bash-scripting-tutorial-for-beginners
+
+--
+
+chmod +x (filename.sh)
+
+Converts a file to be an executable.
+
+--
+
+which bash
+
+Returns location of the bash intrepretor. Use this location for the shebang
+
+--
+
+#!(locationOfIntrepretor)
+
+Shebang. Used at the top of a text file to define the scripts interpreter as bash. This prevents confusion as to which interpreter the computer uses to read the script.
+
+Examples:
+
+#!/usr/bin/bash
+
+or
+
+#!/bin/bash
+
+--
+
+bash (filename.sh)
+
+Runs a bash file.
+
+--
+
+#(comments)
+
+Used for comments in your bash script.
+
+--
+
+
+
+
+
+
+
+
+
+
+
+
+

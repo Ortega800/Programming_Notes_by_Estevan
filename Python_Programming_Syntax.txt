@@ -1,0 +1,151 @@
+
+Python is a loosely typed language in that dataTypes are infered by the interpreter and don't have to be explicitely assigned.
+
+Python uses an interpreter, which is a program on your machine that translates python source code to machine code in real time. This is slower than compiled languages. 
+
+Commands in linux for python
+*****************************
+
+https://www.youtube.com/watch?v=ZEQh45W_UDo
+
+CS50 python at 2:26:00
+
+---
+
+python3
+
+A command that opens the python interpreter in the linux terminal. When the prompt '>>>' appears in the linux terminal, python3 interpreter is active.
+
+---
+
+ctrl + D
+
+ctrl + z
+
+Commands used to exit the python3 interpreter in the linux terminal
+
+---
+
+ctrl + C
+
+stops a python program from continuing to run
+
+---
+
+#!/usr/bin/env python3
+
+Written at the top of a .py file to allow for execution from linux terminal
+
+---
+
+python3 fileName.py
+
+A command that executes a .py file in the linux terminal
+
+
+Syntax of Python
+*****************
+
+print("string")
+
+Outputs string to console
+
+---
+
+print("string" + variable)
+
+Outputs string and concatinates variable to console
+
+---
+
+print(f"string {variable}")
+
+Outputs string and variable to console. Known as a formatted string
+
+---
+
+if boolValue:
+	# Executes code
+elif boolValue
+	# Executes code
+else:
+	# Executes code
+
+
+
+This is an 'if' structure
+
+---
+
+while boolValue:
+	# Executes code
+
+
+
+
+This is a 'while' loop
+
+---
+
+for i in range(3):
+	# Executes code
+
+
+
+This is a 'for' loop
+
+---
+
+from libraryName import functionNameOne, functionNameTwo, functionNameThree, ...
+
+imports a list of functions from a library
+
+---
+
+input()
+
+Returns a string or int from the input from console
+
+---
+
+int(variable)
+
+Convertes variable to an integer
+
+---
+
+str(variable)
+
+Convertes variable to a string
+
+---
+
+float(variable)
+
+Convertes variable to a float
+
+---
+
+varName in [varNameOne, varNameTwo, varNameThree, ...]
+
+Returns a boolVariable if varName is equal to another varName in the list
+
+---
+
+def functionName(varOne, varTwo, ...)
+	#Execute code
+	return varName
+
+Defines a function
+
+---
+
+ 
+
+
+
+
+ 
+
+
+

@@ -1,0 +1,130 @@
+https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control
+
+Git Manual
+***********
+
+sudo apt-get install git
+
+Install git using linux terminal
+
+--
+
+What is a repository in Git?
+
+A file where changes are recorded
+
+--
+
+What is GitHub?
+
+A website for accessing repositories
+
+--
+
+git clone (URL)
+
+copies repository into your machine in current directory using the URL in github
+
+--
+
+git add (fileName)
+
+adds a file to be ready to commit it to github. Kind of like a staging area for getting a file ready to be commited.
+
+--
+
+git commit -m "message"
+
+saves the current version of the repoitory on your machine
+
+--
+
+git commit -am "message"
+
+adds all changed files and commits them
+
+--
+
+git push
+
+saves the repository from your machine to the repository in github cloud
+
+--
+
+git pull
+
+saves repository in github to the repository on your machine
+
+--
+
+<<<<<<<<< HEAD
+(version one)
+=============
+(version two)
+>>>>>>>>>
+
+
+
+This is a merge conflict. If the same line of code is different in both the repository in github and the repository in your machine, then if you try to pull from the repository, there will be a merge conflict. Git will write the message above in your file with both 'version one' and 'version two' being the conflicting line of code.
+
+
+
+
+--
+
+git config --global --edit
+
+Used for editing the git config file.
+
+--
+
+What is SSH?
+
+Stands for 'Secure Shell' and is a communication protocol (like https, ftp, etc) used for establishing encrypted traffic between remote computers over insecure networks. SSH encrypts the data packets that are sent between two machines using public and private keys. SSH runs on the client side.
+
+--
+
+What is SSHD?
+
+Stands for SSH Daemon and uns on the server side. To establish a connection between the server and client, the server must have sshd installed and running. 
+
+--
+
+ssh-keygen
+
+generates a public and private key pair in a folder named .ssh
+Public key has extension .pub
+
+--
+
+https://www.youtube.com/watch?v=H5qNpRGB7Qw
+
+Tutorial for adding SSH key to Github
+
+--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
