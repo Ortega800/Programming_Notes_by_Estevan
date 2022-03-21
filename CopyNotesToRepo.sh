@@ -4,7 +4,11 @@
 
 # Notes_on_Prog_Lang_Syntax_by_Estevan
 
+cd ..
+
 cp Bash_Commands.txt Git_Commands.txt Python_Programming_Syntax.txt Java_Programming_Syntax.txt x86_Assembly_Programming_Notes.txt CopyNotesToRepo.sh Programming_Notes_by_Estevan
+
+cd Programming_Notes_by_Estevan
 
 # Add notes to git 'staging area'
 

@@ -14,7 +14,7 @@ Unix file-system wiki
 
 What data structure is contained in unix-style directories?
 
-Inodes (,not the files themselves,) that contain the location of an object's data (aka location of the file) and the metadata about that block of data (name, owner, permissions, size, recent time of access, etc).
+Inodes (not the files themselves) that contain the location of an object's data (aka location of the file) and the metadata about that block of data (name, owner, permissions, size, recent time of access, etc).
 
 Analogy: It's like looking at books in the library. You know may know the metadata of the book (title, size, when it was last checked out) and the location (isle 43, at the right end of the 3rd shelf) of the book which you can call the inode, but you still know nothing about what's inside the book until you make the explicit decision to check.
 
