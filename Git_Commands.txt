@@ -35,7 +35,7 @@ adds a file to be ready to commit it to github. Kind of like a staging area for 
 
 git commit -m "message"
 
-saves the current version of the repoitory on your machine
+saves the current version, or "snapshot", of the repository on your machine
 
 --
 
