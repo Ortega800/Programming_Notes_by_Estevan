@@ -3,6 +3,9 @@
 # text files from desktop to the Programming_Notes_by_Estevan folder repository
 # to then be pushed to Git.
 
+# For convenience, I aliased my .bashrc file to run this 
+# script when I type "PushNotes"
+
 cd ..
 
 # moves to Desktop to copy notes to repository
