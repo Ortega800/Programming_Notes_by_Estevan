@@ -82,6 +82,25 @@ Arrays.sort(arrayName, elementIndexOne, elementIndexTwo);
 A method that returns a sorted array or sorts specific elements in the array
 
 
+ArrayList Class in Java
+************************
+
+java.util.ArrayList;
+
+arrayListName.ArrayList()	: Creates an empty list
+arrayListName.add(obj: E)		: Appends a new element obj at the end of the list
+arrayListName.add(index: int, obj: E)	: Adds new element obj at specified index in list
+arrayListName.clear()			: Removes all elements from the list
+arrayListName.contains(obj: Object)	: Returns true if list contains element obj
+arrayListName.get(index: int)		: Returns element from the list at specified index
+arrayListName.isEmpty()			: Returns true if list contains no elements
+arrayListName.lastIndexOf(obj: Object)	: Returns index of last matching element in list
+arrayListName.remove(obj: Object)	: Removes first element from list. Returns true if element is removed.
+arrayListName.size()			: Returns number of elements in list
+arrayListName.remove(index: int)	: Removes element in dpecified index. Returns true if element is removed
+arrayListName.set(index: int, obj: E)	: Sets element at specified index
+
+
 
 Methods (Functions) in Java
 ****************************
@@ -319,6 +338,70 @@ this.variableName;
 Refers to the non-static variable in the object.
 
 --
+
+Superclasses and Subclasses
+****************************
+
+Superclass == Parent Class == Base Class
+Subclass   == Child Class  == Derived Class
+
+---
+
+public class subClassName extends superClassName
+	{
+
+	@override
+	public dataTypeTwo methodTwo(dataTypeOne parameterOne, ...)
+			{
+				// code to execute
+
+				return variableName;
+			}
+
+	}
+
+Creates a subclass from a superclass and can either overload or override methods in the superclass by having the same signature or having the same method name but different return-type or parameters respectively.
+
+Using @Override will generte an error if the method in subclass did not override the method in the superclass because of a misspelled method name.
+
+---
+
+A Subclass,
+
+
+inherits,			does not inherit
+
+public methods			private methods?
+				Constructors
+				Private data field
+
+
+
+---
+
+Any object created in Java is an extension of the Object class.
+
+---
+
+A method can accept an object (a supertype) as a parameter as well as other objects which are subtypes.
+
+---
+
+A class declared with 'final' modifier will not be extended from a super-class.
+A method declared with 'final' modifier be non-overridable.
+
+---
+
+Modifiers allow methods or data in a class to be accessed from,
+
+
+Same Class in	  Same Package	   Subclass in 		   Different Package
+Same Package			   Different Package
+
+public		  public	   public		   public		
+protected	  protected	   protected
+default		  default
+private
 
 
 
