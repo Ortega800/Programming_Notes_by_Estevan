@@ -85,9 +85,13 @@ A method that returns a sorted array or sorts specific elements in the array
 ArrayList Class in Java
 ************************
 
-java.util.ArrayList;
+import java.util.ArrayList;		: Imports ArrayList class
 
-arrayListName.ArrayList()	: Creates an empty list
+---
+
+ArrayList<dataType> listName = new ArrayList<>();	: Creates ArrayList of dataType
+
+arrayListName.ArrayList()		: Creates an empty list
 arrayListName.add(obj: E)		: Appends a new element obj at the end of the list
 arrayListName.add(index: int, obj: E)	: Adds new element obj at specified index in list
 arrayListName.clear()			: Removes all elements from the list
@@ -97,8 +101,38 @@ arrayListName.isEmpty()			: Returns true if list contains no elements
 arrayListName.lastIndexOf(obj: Object)	: Returns index of last matching element in list
 arrayListName.remove(obj: Object)	: Removes first element from list. Returns true if element is removed.
 arrayListName.size()			: Returns number of elements in list
-arrayListName.remove(index: int)	: Removes element in dpecified index. Returns true if element is removed
+arrayListName.remove(index: int)	: Removes element in specified index. Returns true if element is removed
 arrayListName.set(index: int, obj: E)	: Sets element at specified index
+
+---
+
+ArrayList<dataType> listName = new ArrayList<>(Arrays.asList(arrayName));
+
+Converts an array to an ArrayList.
+
+---
+
+arrayListName.toArray(arrayName);
+
+Converts an ArrayList to an array.
+
+---
+
+import java.util.collections.*;
+
+imports sort, min, max, and shuffle
+
+---
+
+sort(arrayName)		: Sorts an array if elements are integers, doubles or strings
+min(arrayName)		: Returns min element
+max(arrayName)		: Returns max element
+shuffle(arrayName)	: Randomly shuffles elements in array
+
+---
+
+
+
 
 
 
@@ -242,7 +276,7 @@ modifier class className
 	
 		Private dataType variableNameThree;
 
-	// Constructor is called when the 'new operator is invoked and builds the object
+	// Constructor is called when the 'new' operator is invoked and builds the object
 
 		className()
 			{
@@ -379,7 +413,32 @@ public methods			private methods?
 
 ---
 
-Any object created in Java is an extension of the Object class.
+Constructors from superclasses can be inherited by subclasses using 
+
+super()						: no-arg superClass constructor
+super(dataType1 par1, dataType2 par2, ...) 	: Inside subClass constructor
+super(par1, par2, ...)				: Inside subClass but not in constructor
+
+either of these must be the first statment in the subclass
+
+---
+
+Methods from superclasses can be invoked in a subclass using
+
+super.methodName()
+super.methodName(dataType1 par1, dataType2 par2, ...)
+
+---
+
+All classes in Java are extensions of the class named 'Object'.
+
+Thus, when no inheritance of the class is defined, the class inherits the Object superclass by default.	
+
+objectName.toString()		: Object method returns objectName@memoryLocationInHex
+
+---
+
+If the inheritance chain goes from most specialized to most general objects (obj1, obj2, obj3, ..., obj n) then when a method is invoked, the Java Virtual Machine will look fro the method starting from most specialized (obj1) to most general (obj n).
 
 ---
 
@@ -387,7 +446,7 @@ A method can accept an object (a supertype) as a parameter as well as other obje
 
 ---
 
-A class declared with 'final' modifier will not be extended from a super-class.
+A class declared with 'final' modifier will not be extended. The Math class is final.
 A method declared with 'final' modifier be non-overridable.
 
 ---
