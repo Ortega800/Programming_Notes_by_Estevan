@@ -373,6 +373,13 @@ Refers to the non-static variable in the object.
 
 --
 
+this.varName
+
+refers to the variable in the class and not the variable in a parameter for a method.
+
+
+
+
 Superclasses and Subclasses
 ****************************
 
@@ -396,7 +403,7 @@ public class subClassName extends superClassName
 
 Creates a subclass from a superclass and can either overload or override methods in the superclass by having the same signature or having the same method name but different return-type or parameters respectively.
 
-Using @Override will generte an error if the method in subclass did not override the method in the superclass because of a misspelled method name.
+Using @Override will generate an error if the method in subclass did not override the method in the superclass because of a misspelled method name.
 
 ---
 
@@ -462,6 +469,19 @@ protected	  protected	   protected
 default		  default
 private
 
+---
+
+What is an abstract class?
+
+A super class that is too general to instantiate and only serves to be inherited by subclasses. Abstract classes cannot be instatiated without also implementing the abstract methods.
+
+
+WHat is an abstract method?
+
+A method that must be overridden/instantiated in the subclass. An abstract method only contains the header without a code block (Curly braces). Include semi-colon.
+
+abstract modifier returnType methodName(dataType1 par1, ...);
+
 
 
 Scanners in Java
@@ -495,7 +515,7 @@ scannerName.nextDouble   : Reads a double-type number
 
 scannerName.next()       : Reads a string that ends before a spacebar character
 
-scannerName.nextLine()   : Reads a line that ends before the next-line
+scannerName.nextLine()   : Reads the rest of the current line, then jumps to the next line
 
 scannerName.next().charAt(index) : Reads the char at the index of the next string
 
@@ -662,14 +682,119 @@ Returns left number to the power of the right number
 
 Math.random();
 
-Returns a randome double between 0 and 1
+Returns a random double between 0 and 1
+
+
+File Handling in Java
+**********************
+
+The File class is used for finding file name and directory path.
+
+The PrintWriter class can write to a file.
+
+---
+
+File fileObjectName = new File("FileName.txt");
+
+Creates File object.
 
 --
 
-JavaFX
-******
+PrintWriter printWriterObjectName = new PrintWriter(fileObjectName);
+
+Creates PrintWriter object.
+
+--
+
+import java.io.File;
+import java.io.PrintWriter;
+
+--
 
 
 
+try (PrintWriter printWriterObjectName = new PrintWriter(fileObjectName);)
+{
+	printWriterObjectName.print(variableName);
+	//More code here...
+}
+// Closes printWriter after try block
+
+
+Can also be done with Scanner.
+--
+
+printWriterObjectName.close();
+
+--
+
+Scanner input = new Scanner(new file("fileName.txt"));
+
+or
+
+Scanner input = new Scanner(fileObjectName);
+
+Reads from file.
+
+---
+
+fileName.File(pathname: String)
+fileName.File(parent: String, child: String)
+fileName.File(parent: File, child: String)
+fileName.exists()		: Returns true if file object exists
+fileName.canRead()		: Returns true if file exists and can be read
+fileName.canWrite()		: Returns true if file exists and can be written
+fileName.isDirectory()		: Returns true if object is a dir
+fileName.isFile()		: Returns true if object is a file
+fileName.isAbsolute()		: Returns true if file created using absolute path
+fileName.isHidden()		: Returns true if file is hidden
+fileName.getAbsolutePath()	: Returns absolute path of file, String
+fileName.getCanonicalPath()	: Returns absolute path with resolved symbolic links, String
+fileName.getName()		: Returns name as String
+fileName.getPath()		: Returns path as String
+fileName.getParent()		: Returns parent dir as String
+fileName.lastModified()		: Returns Last date when modified, long
+fileName.length()		: Returns size in bytes or zero if file doesn't exist or is a dir, long
+fileName.listFiles()		: Returns files in dir for a dir file object, File[]
+fileName.delete()		: Deletes file and returns true if successful, boolean
+fileName.renameTo(destFile)	: Renames file to destFile, returns true if successful
+fileName.mkdir()		: Creates dir for file object, returns true if successful
+fileName.mkdirs()		: Creates dir and paraent dir, returns true if successful
+
+
+
+Exception Handling in Java
+***************************
+
+try
+{
+	//Executes code here...
+}
+catch(exceptionName)
+{
+	//Executes code if errorType occured...
+}
+catch(exceptionNameOne | exceptionNameTwo | exceptionNameThree)
+{
+	//Executes code if any of the three errorTypes occured...
+}
+finally
+{
+	//Executes regardless of exception occurs or not and before return...
+}
+
+If an certain error occures in the try block, the code in the catch block will execute. You can make multiple catch statements. As soon as an exception occurs, the rest of the code in the try block is skipped.
+
+---
+
+throw exceptionName("Error Message");
+
+Throws an error.
+
+---
+
+modifiers returnType methodName(dataType parameterOne,  ...) throws exceptionOne, exceptionThree, ...
+
+Signature for a method that can throw exceptions to its' caller if they occur.
 
 

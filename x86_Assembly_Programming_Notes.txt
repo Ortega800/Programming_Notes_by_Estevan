@@ -276,11 +276,32 @@ A    Direction flag:  Setting this flag decrements the index register on string 
 B    OF flag:         Operation had an overflow
 
 
-
 ---
 
+LMB is left most bit
+RMB is right most bit
+CF is carry flag
+
+Bit-shifting
+
+SHL 	Shift left, LMB goes to CF
+SHR 	Shift right, RMB goes to CF
+SAL 	Shift arithmetic left, LMB goes to carry flag, RMB set to zero 
+SAR 	Shift arithmetic right, LMB is unchanged, RMB goes to CF 
+ROL 	Rotate left, LMB goes to both CF and RMB
+ROR 	Rotate right, RMB goes to both CF and LMB
+RCL 	Rotate carry left, LMB goes to CF, CF goes to RMB
+RCR 	Rotate carry right, RMB goes to CF, CF goes to LMB
+
+SHLD 	Double-precision shift left, LMB of destination goes to CF, 
+	LMB of source goes to RMB of Destination
+
+SHRD 	Double-precision shift right, RMB of destination goes to CF,
+	RMB of source goes to LMB of Destination
 
 
+SHL destination, count
+SHRD destination, source, count
 
 
 
