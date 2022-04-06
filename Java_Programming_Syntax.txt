@@ -239,7 +239,7 @@ modifiers dataTypeTwo methodName(dataTypeTwo parameterOne, dataTypeTwo parameter
 
 What is a library?
 
-A set of methods written to carry out tasks for similar problems which can be used to increase prodoctivity. 
+A set of methods written to carry out tasks for similar problems which can be used to increase productivity. 
 
 --
 
