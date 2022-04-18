@@ -48,6 +48,19 @@ END mainProcessName    ; Ends the entire file for assembly
 
 ------
 
+call procedureName	; Push IP
+
+---
+procedureName proc
+
+; Procedure code here
+
+ret			; Pop IP
+
+procedureName endp
+
+------
+
 opcode   op1, op2
 
 opcode  : A name for an action to be done by the CPU
@@ -216,13 +229,17 @@ Memory access takes many clock cycles, and therefore is inefficient.
 
 ---
 
-[Register]
+[variable + numberOfBytes]
 
 Returns the values in the location of the register
 
-Ex: mov DL, [EBX]
+mov al, [var]		; Moves the value var into DL
+mov al, [var+1]		; Moves the value one byte after var into DL
+mov al, [var+2]		; Moves the value two bytes after var into DL
 
-DL is 8 bits, while EBX is 32-bit. [EBX] stores first 8 bits to DL.
+mov DL, [EBX]		; Stores first 8 bits of EBX into DL
+
+DL is 8 bits, while EBX is 32-bit.
 The square brackets is a pointer to memory location.
 
 ---
@@ -260,7 +277,8 @@ GS	Extra Data Segment
 
 ---
 
-Flags Register, Shows info about the result of an execution
+Flags Register, Shows info about the result of an execution.
+All arithmetic, logic, and compare opcodes set the flags.
 
 
 Hex, Flag Name,       Purpose
@@ -304,6 +322,37 @@ SHL destination, count
 SHRD destination, source, count
 
 
+--- pg 389 in x86 book
+
+String Primitive instructions which use ESI and EDI and accumulator (AL, AX, or EAX).
+
+
+bytes,  words,  doublewords, Description
+
+MOVSB	MOVSW	MOVSD	     Copy data from memory addressed by ESI to memory addressed by EDI
+CMPSB	CMPSW	CMPSD	     Compare contents of two memory locations addressed by ESI and EDI
+SCASB	SCASW	SCASD	     Compare the accumulator to the contents of memory addressed by EDI
+STOSB	STOSW	STOSD	     Store the accumulator contents into memory addressed by EDI
+LODSB	LODSW	LODSD	     Load memory addressed by ESI into the accumulator
+
+---
+
+A repeat prefix can be placed before the String primitive instruction.
+Every execution of the repeat instruction decrements ECX.
+
+
+REP			Repeat while ECX > 0
+REPZ or REPE		Repeat while the Zero flag is set and ECX > 0
+REPNZ or REPNE		Repeat while the Zero flag is clear and ECX > 0 
+
+
+---
+
+
+The direction flag sets whether ESI and EDI icrement or decrement when string primitives execute.
+
+CLD	Increment from low to high memory addresses
+STD	Decrement from high to low memory addresses
 
 
 

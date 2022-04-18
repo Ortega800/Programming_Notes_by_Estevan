@@ -426,7 +426,8 @@ super()						: no-arg superClass constructor
 super(dataType1 par1, dataType2 par2, ...) 	: Inside subClass constructor
 super(par1, par2, ...)				: Inside subClass but not in constructor
 
-either of these must be the first statment in the subclass
+either of these must be the first statment in the subclass.
+No-arg superClass constructors are default if no superclass constructors are found in subclass contructor. 
 
 ---
 
@@ -469,6 +470,11 @@ protected	  protected	   protected
 default		  default
 private
 
+
+---
+
+All classes, except interfaces, inherit from the object class.
+
 ---
 
 What is an abstract class?
@@ -481,6 +487,28 @@ WHat is an abstract method?
 A method that must be overridden/instantiated in the subclass. An abstract method only contains the header without a code block (Curly braces). Include semi-colon.
 
 abstract modifier returnType methodName(dataType1 par1, ...);
+
+---
+
+Interfaces contail only final variables and abstract methods.
+Serves as common behavior among objects.
+
+modifier interface interfaceName
+{
+	final variableNameOne
+	final variableNameTwo
+	
+	abstract modifier returnType methodName(dataType1 par1, ...);
+}
+
+---
+
+// Allows a class to inherit an interface.
+
+modifier class className implements interfaceName
+{
+	// Code for class here
+}
 
 
 
@@ -579,6 +607,17 @@ stringName.split('delimiter')  : Returns an array of strings where each were sep
 
 stringName = stringNameOne + stringNameTwo + ..;    : Concatinates multiple strings 
 
+
+Character Class is Java
+************************
+
+Character.isDigit(charVariable)		: Returns true if char is digit
+Character.isLetter(charVariable)	: Returns true if char is letter
+Character.isLetterOrDigit(charVariable)	: Returns true if char is letter or digit
+Character.isLowerCase(charVariable)	: Returns true if char is lowercase
+Character.isUpperCase(charVariable)	: Returns true if char is uppercase
+Character.toLowerCase(charVariable)	: Returns the lowercase of char
+Character.toUpperCase(charVariable)	: Returns the uppercase of char
 
 Type Conversion in Java
 ************************
