@@ -236,6 +236,7 @@ Returns the values in the location of the register
 mov al, [var]		; Moves the value var into DL
 mov al, [var+1]		; Moves the value one byte after var into DL
 mov al, [var+2]		; Moves the value two bytes after var into DL
+mov al, [var-1]		; Moves the value one byte before var into DL
 
 mov DL, [EBX]		; Stores first 8 bits of EBX into DL
 
@@ -342,8 +343,8 @@ Every execution of the repeat instruction decrements ECX.
 
 
 REP			Repeat while ECX > 0
-REPZ or REPE		Repeat while the Zero flag is set and ECX > 0
-REPNZ or REPNE		Repeat while the Zero flag is clear and ECX > 0 
+REPZ or REPE		Repeat while the Zero flag is set, ECX > 0, and values are equal
+REPNZ or REPNE		Repeat while the Zero flag is clear, ECX > 0, and values are not equal
 
 
 ---
