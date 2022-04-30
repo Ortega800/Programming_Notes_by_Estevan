@@ -89,7 +89,7 @@ import java.util.ArrayList;		: Imports ArrayList class
 
 ---
 
-ArrayList<dataType> listName = new ArrayList<>();	: Creates ArrayList of dataType
+ArrayList<dataType> arrayListName = new ArrayList<>();	: Creates ArrayList of dataType
 
 arrayListName.ArrayList()		: Creates an empty list
 arrayListName.add(obj: E)		: Appends a new element obj at the end of the list
@@ -245,7 +245,7 @@ A set of methods written to carry out tasks for similar problems which can be us
 
 What is an API?
 
-a set of tools that allow software to communicate with each other.
+a set of tools that allow software to communicate with other software.
 
 --
 
@@ -371,13 +371,6 @@ this.variableName;
 
 Refers to the non-static variable in the object.
 
---
-
-this.varName
-
-refers to the variable in the class and not the variable in a parameter for a method.
-
-
 
 
 Superclasses and Subclasses
@@ -446,7 +439,7 @@ objectName.toString()		: Object method returns objectName@memoryLocationInHex
 
 ---
 
-If the inheritance chain goes from most specialized to most general objects (obj1, obj2, obj3, ..., obj n) then when a method is invoked, the Java Virtual Machine will look fro the method starting from most specialized (obj1) to most general (obj n).
+If the inheritance chain goes from most specialized to most general objects (obj1, obj2, obj3, ..., obj n) then when a method is invoked, the Java Virtual Machine will look for the method starting from most specialized (obj1) to most general (obj n).
 
 ---
 
