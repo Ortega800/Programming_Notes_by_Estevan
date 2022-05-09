@@ -10,13 +10,13 @@ cd ..
 
 # moves to Desktop to copy notes to repository
 
-cp Bash_Commands.txt Git_Commands.txt Python_Programming_Syntax.txt Java_Programming_Syntax.txt x86_Assembly_Programming_Notes.txt CopyNotesToRepo.sh Programming_Notes_by_Estevan
+cp Bash_Commands.txt ARM_Assembly_Programming.txt Git_Commands.txt Python_Programming_Syntax.txt Java_Programming_Syntax.txt x86_Assembly_Programming_Notes.txt CopyNotesToRepo.sh Programming_Notes_by_Estevan
 
 cd Programming_Notes_by_Estevan
 
 # Add notes to git 'staging area'
 
-git add Bash_Commands.txt Git_Commands.txt Python_Programming_Syntax.txt Java_Programming_Syntax.txt x86_Assembly_Programming_Notes.txt CopyNotesToRepo.sh
+git add Bash_Commands.txt ARM_Assembly_Programming.txt Git_Commands.txt Python_Programming_Syntax.txt Java_Programming_Syntax.txt x86_Assembly_Programming_Notes.txt CopyNotesToRepo.sh
 
 git commit -am "I am a script that is Updating Estevan's Notes"
 

@@ -1,0 +1,57 @@
+https://developer.arm.com/
+
+---
+
+Registers are R0 ... Rn where n is dependant on the processor type.
+
+opcode op1, op2, op3
+
+op1 is destination register.
+op2 and op3 are source.
+
+example:
+
+sum op1, op2, op3	// Source operands are conserved
+
+op1 <- op2 + op3
+
+--
+
+sum op1, op1, op2	// The result overwrights op1
+
+op1 <- op1 + op2
+
+--
+
+LDR op1, op2		// op1 is register, op2 is memory or another register
+			// 'load register'
+--
+
+LDR op1, [op2]		// op2 is an address and [op2] is the content at that address
+			// Loads contents of op2 to op1
+
+--
+
+STR op1, [op2]		// Copies contents of op1 to address specified by op2
+
+--
+
+#constant		// Syntax for a constant
+
+--
+
+=variableName		// Represents the address of variableName
+
+--
+
+
+
+
+
+
+
+
+
+
+
+
