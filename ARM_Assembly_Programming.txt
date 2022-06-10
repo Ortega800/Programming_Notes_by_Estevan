@@ -1,5 +1,7 @@
 https://developer.arm.com/
 
+http://www.mathcs.emory.edu/~cheung/Courses/255/Syl-ARM/7-ARM/cmp+bra.html		<-- Conditional branching syntax
+
 ---
 
 Registers are R0 ... Rn where n is dependant on the processor type.
@@ -15,11 +17,15 @@ sum op1, op2, op3	// Source operands are conserved
 
 op1 <- op2 + op3
 
+// sums op1, op2, op3 sets the flags
+
 --
 
 sum op1, op1, op2	// The result overwrights op1
 
 op1 <- op1 + op2
+
+// sums op1, op1, op2 sets the flags
 
 --
 
@@ -28,11 +34,13 @@ LDR op1, op2		// op1 is register, op2 is memory or another register
 --
 
 LDR op1, [op2]		// op2 is an address and [op2] is the content at that address
-			// Loads contents of op2 to op1
+LDR op1, =variableName	// Loads contents in address of op2 to op1
+			// op1 -> [op2]
 
 --
 
 STR op1, [op2]		// Copies contents of op1 to address specified by op2
+			// Destination operand is on the right side!
 
 --
 
@@ -44,8 +52,11 @@ STR op1, [op2]		// Copies contents of op1 to address specified by op2
 
 --
 
+0xHexNumber		// The '0x' tells the assembler that the following number is a hex number.
 
+--
 
+div op1, op2, op3	// op1 is the qoutient. the div operator only gives qoutient and not a remainder.
 
 
 

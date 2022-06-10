@@ -109,6 +109,18 @@ mul op1
 
 --
 
+div divisor
+
+; Unsigned divide
+
+Dividend,	Divisor,	Quotient,	Remainder
+
+Ax		8-bit		AL		AH
+DX:AX		16-bit		AX		DX
+EDX:EAX		32-bit		EAX		EDX
+
+--
+
 neg op1
 
 ;negates (reverses the sign of) a number in reg or mem by finding 2's complement
@@ -140,7 +152,7 @@ js	if SF = 1, previous operation was negative
 jcxz	if CX equals zero
 jecxz	if ECX equals zero
 jrcxz	if RCX equals zero (64-bit mode)
-jnz	if zero flag equals zero
+jnz	if zero flag equals zero, (Jump if not zero)
 
 ---
 
