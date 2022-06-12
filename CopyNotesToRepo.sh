@@ -18,7 +18,7 @@ cd Programming_Notes_by_Estevan
 
 git add Bash_Commands.txt ARM_Assembly_Programming.txt Git_Commands.txt Python_Programming_Syntax.txt Java_Programming_Syntax.txt x86_Assembly_Programming_Notes.txt CopyNotesToRepo.sh C++_Programming_Syntax.txt
 
-git commit -am "I am a script that is Updating Estevan's Notes"
+git commit -am "Just a script Updating Estevan's Notes"
 
 # Pushes notes to Github
 
