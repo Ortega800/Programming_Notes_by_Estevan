@@ -1,0 +1,327 @@
+CPP Files and Executables
+**************************
+
+g++ -(Flags) SourceCode.cpp -o executableFileName
+
+Flags,			Description
+
+--help			Show options for the compiler
+-Wall 			Show all warnings
+-g 			Provides debugging feature
+--std=c++17		Compiles to a specific version of C++, in this case C++17
+-o fileName		Compiles and links files into an executable called fileName
+			Defualt fileName is called a.out
+-c			Compiles and assenmbes files but does not link them
+--sys-root=directory	Uses directory as root directory for heasers and libraries
+-Werror			Make all warnings into errors
+-Wextra			Allows extra warnings not used by -wall
+-Wfatal-errors		Similar to wall but treats errors as fatal and stops compilation
+-fmax-errors=numErrors	Tells compiler to halt after reaching the amount in numErrors
+-pedantic		Allows warnings that follow the rules of ISO C++
+-Wshadow		warns whenever a local variable or type declaration shadows another
+			variable, parameter, class member, etc
+-Wconversion		Warns if making unsafe conversions between signed and unsigned types
+-O2			optimize code and check for errors
+-time			Times the execution of each subprocess
+
+---
+
+./executableName
+
+Runs the executable from linux terminal
+
+---
+
+Libraries
+**********
+
+#include <cstdlib>
+#include <iostream>
+#include <string>
+#include <vector>
+#include <sstream>
+#include <limits>
+#include <numeric>
+#include <ctime>
+#include <fstream>
+#include <>
+#include <>
+#include <>
+
+using namespace std;	// Automatically uses 'std::' in the code
+
+
+Variables, console IO, loops, and conditionals
+***********************************************
+
+Var++	// Use variable first, then increment
+
+++Var	// Increment first, then use the variable
+
+---
+
+std::cout << varName << std::endl;
+
+outputs varName and a newline to console
+
+---
+
+std::cin >> varName;
+
+User input in console is stored in varName.
+
+---
+
+for (int i = 0; i < number; i++)
+{
+	// Execute this code
+}
+
+Does not make a difference if 'i++' or '++i' is used in the argument.
+
+---
+
+for (auto indexName: vectorName)
+{
+	// Code executes here for each index using indexName
+}
+
+// Works for arrays too.
+
+---
+
+// Variables can also go here
+
+int main() 
+{
+	// main code and variables are here
+
+	return 0;
+}
+
+
+---
+
+dataType,			Description
+
+short int			-32768 to 32767
+int				-2147483648 to 2147483647
+long				-9223372036854775808 to 9223372036854775807
+unsigned int
+unsigned short int		0 to 65535
+unsigned long int		
+float				1.17549e-38 to 3.40282e+38
+double
+long double			3.3621e-4932 to 1.18973e+4932
+bool				0 for false, 1 for true
+char				Ascii character
+const (dataType)		Creates an unchangable value
+auto				Compiler infers the variableType
+
+---
+
+sizeOf(varName)
+
+Returns the size of varName in bytes. Can even be used for arrays.
+
+---
+
+printf("%c %d %.3f %s\n", 'charVar', intVar, floatVar, "String")'
+
+Symbols on the left are substituted by the variables on the right
+
+Symbol,		Description
+
+%%		Outputs a percent sign 
+
+---
+
+getline(std::cin, varName);
+
+User input in console is stored in variableName
+
+---
+
+std::string stringVar;
+
+std:: string stringVar = "Hello";
+
+Creates a string variable named stringVar
+
+---
+
+std::stod(doubleVar);
+
+converts string to double
+
+---
+
+if()
+{
+	// Execute Code
+}
+else if()
+{
+	// Execute Code
+}
+else
+{
+	// Execute Code
+}
+
+
+Arrays and Vectors
+*******************
+
+dataType arrayName[numOfElements] = {firstValue, secondValue, thirdValue, ...};
+
+Creates an array and initializes values. if the numberOfPlaces is greater than the number of values initialized, then the rest of the values will be initialized to zeros.
+
+---
+
+dataType arrayName[numOfRows][numOfColumns][numOfDepth] = {{{r0c0d0, r0c1d0, ...}, {r1c0d0, r1c0d0 ...}}, {{r0c0d1, r0c1d1, ...}, {r1c0d1, r1c0d1 ...}}}
+
+Creates and initializes a three dimensional array.
+
+---
+
+arrayName[rowIndex][columnIndex][depthIndex] = value;
+
+assigns a value to a specified place in an array.
+
+---
+
+sizeof(arrayName);
+
+Returns the size of the entire array in bytes.
+
+sizeof(*arrayName);
+
+Returns the size of the data in the first index of the array in bytes.
+
+---
+
+std::vector<dataType> vectorName(numofElements);
+
+Creates a vector.
+
+---
+
+vectorName[elementIndex] = value;
+
+assigns a value to a specified place in the vector.
+
+---
+
+vectorName.push_back(value);
+
+extends the tail end of the vector to append the value.
+
+---
+
+vectorName.size()
+
+Returns the size of the vector.
+
+---
+
+std::iota(std::begin(vectorNmae), std::end(vectorName), startingValue);
+
+Fills in a previously created vector with values that increment from beginning to the end.
+
+---
+
+Pointers and References
+************************
+
+dataType* addressName = value;
+
+dataType* addressName = NULL;
+
+Uses an address identified by addressName and stores a value.
+
+---
+
+addressName = &varName;
+
+Replaces the address identified by addressName with the address in varName. 
+The '&' is the reference operator, returning the address.
+
+---
+
+*addressName
+
+Returns the value stored in the address identified by addressName. 
+The '*' is the de-reference operator, returning the value from an address.
+
+---
+
+dataType& varName
+
+Returns the address of varName.
+Can be used in arguments.
+
+---
+
+Exceptions
+***********
+
+try{
+
+	if(condition)
+	{
+		throw "Error Message";
+	}
+	else
+	{
+		// Execute code
+	}	
+}
+  
+catch(ExceptionType)
+{
+	std::cout << "Error message in console"
+	// Program Halts
+}
+
+
+File IO
+********
+
+cout is a standard output stream object of type ostream.
+cin is the standard input stream object of type istream.
+
+---
+
+ofstream outStreamName;	// Creates a file output stream
+ifstream inStreamName;	// Creates a file input stream
+
+---
+
+streamName.open("fileName");		// Opens fileName and assumes fileName exists
+streamName.open("filename", ios::app);	// Opens fileName and appends to the existing file
+streamName.close();			// Closes fileName
+
+---
+
+inStreamName >> varName;	// Reads varName from file
+outStreamName << varName;	// Writes varName to file
+
+---
+
+streamName.peek()	// Returns the next char
+
+EOF			// End of file
+
+---
+
+
+
+
+
+
+
+
+
+
+
