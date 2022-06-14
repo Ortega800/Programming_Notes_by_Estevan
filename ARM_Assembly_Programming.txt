@@ -56,9 +56,24 @@ STR op1, [op2]		// Copies contents of op1 to address specified by op2
 
 --
 
-div op1, op2, op3	// op1 is the qoutient. the div operator only gives qoutient and not a remainder.
+DIV op1, op2, op3	// op1 is the qoutient. the div operator only gives qoutient and not a remainder.
 
+--
 
+Conditional,		Description
+
+BEQ			Branch if equal
+BNE			Branch if not equal
+BGT			Branch if signed greater than
+BLT			Branch if signed less than
+BGE			Branch if signed greater than or equal to
+BLE			Branch if signed less than or equal to
+BMI			Branch if negative
+BPL			Branch if positive
+BVS			Branch if signed overflow
+BVC			Branch if no signed overflow
+BHI			Branch if unsigned higher
+BLS			Branch if unsigned lower or equal
 
 
 

@@ -26,11 +26,18 @@ Flags,			Description
 
 ---
 
+clang++ fileName.cpp
+
+Compiles a cource file using the clang++ compiler.
+
+---
+
 ./executableName
 
 Runs the executable from linux terminal
 
 ---
+
 
 Libraries
 **********
@@ -315,7 +322,45 @@ EOF			// End of file
 
 ---
 
+Classes and Objects
+********************
 
+class className
+{
+accessModifier:
+
+	returnType functionName(dataType parameterOne, dataType parameterTwo, ...)
+		{
+
+		//Block of statements that execute if function is called..
+	
+		return variableName;
+
+		}
+}
+
+
+---
+
+Access modifiers can be public, private, or protected.
+An access modifier by default is private.
+
+Access modifier,		Description
+
+Public  			Allow access by outside classes and functions.
+
+Private		 		Allow access only by members within the same class.
+
+Protected 			Allow access only by members within the same class,
+				any child classes, and friend classes.
+
+---
+
+
+Linear Data Structures
+***********************
+
+Stacks, Recursion, Queues, Collection ADT, List ADT (Linked lists, Doubly Linked Lists, Circularly Linked Lists), Skip List, MAP ADT, Hash Tables, Hash Tables with Utilize Linked Lists, Sorting (Quicksort, Shell Sort, Insertion Short, Bubble Sort), and Searching
 
 
 
