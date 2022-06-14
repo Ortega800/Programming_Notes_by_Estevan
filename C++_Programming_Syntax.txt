@@ -124,6 +124,10 @@ bool				0 for false, 1 for true
 char				Ascii character
 const (dataType)		Creates an unchangable value
 auto				Compiler infers the variableType
+static (dataType)		Only one copy of this data is shared among
+				all objects of its' class. It is initialized
+				in the start of the program and is only visible
+				within its' own class.
 
 ---
 
@@ -327,12 +331,36 @@ Classes and Objects
 
 class className
 {
-accessModifier:
+
+dataAccessModifier
+	
+	dataType varNameOne;
+	dataType varNameTwo;
+	dataType varNameThree;
+
+functionAccessModifier:
+
+	className::className(dataType parameterOne, dataType parameterTwo, ...)
+		{
+			// Execute constructor code here
+		}
+
+	className::className()
+		{
+			// Execute constructor code here
+		}
+
+	className::~className()
+		{
+			// Execute de-constructor code here
+			// All remaining memory should be released here
+		}
+
 
 	returnType functionName(dataType parameterOne, dataType parameterTwo, ...)
 		{
 
-		//Block of statements that execute if function is called..
+		// Block of statements that execute if function is called..
 	
 		return variableName;
 
@@ -347,14 +375,15 @@ An access modifier by default is private.
 
 Access modifier,		Description
 
-Public  			Allow access by outside classes and functions.
+Public  			Allow access by all outside classes and functions.
 
 Private		 		Allow access only by members within the same class.
 
 Protected 			Allow access only by members within the same class,
-				any child classes, and friend classes.
+				any child classes, and any declared friend classes.
 
 ---
+
 
 
 Linear Data Structures
