@@ -200,6 +200,7 @@ Extends signed integer into another register for idiv and imul operations
 cbw	;Sign-extends register AL into AX
 cwd	;Sign-extends register AX into DX
 cdq	;Sign-extends register EAX into EDX
+cwde	;Sign-extends register AX into EAX
 
 ---
 

@@ -365,49 +365,6 @@ Used for comments in your bash script.
 
 --
 
-Data Structures class specific commands
-========================================
-
-wasp.cs.kent.edu
-
-Used in PUTTY program to access directory in cs class server.
-Use kent username and flashline password to log in.
-
----
-
-svn commit -m "comment"
-
-sends file to the CS server directory
-
----
-
-svn update
-
-pulls the version of your directory from the server to your machine, 
-overwrighting what was on your machine.
-
----
-
-svn add (fileName) (fileName) (directoryName) (... )
-
-Adds files and/or directories to a staging area in preparation
-for commiting them to the CS server directory.
-
----
-
-svn delete (fileName) (directoryName) (... )
-
-Adds a request to delete files and/or directory from both
-the CS server directory and your machine to the staging area
-in preparation for commiting them.
-
----
-
-
-
-
-
-
 
 
 

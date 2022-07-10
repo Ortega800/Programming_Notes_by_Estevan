@@ -48,6 +48,26 @@ STR op1, [op2]		// Copies contents of op1 to address specified by op2
 
 --
 
+#(1<<digitSpotInDecimal|1<<anotherDigitSpotInDecimal|...)
+
+Sets the 1s of a binary number while setting all other digits as zeros
+
+Example: #(1<<0|1<<2|1<<3)  converts to the binary  0000 0000 0000 1101
+
+--
+
+ORR op1, op1, #(1<<digitSpotInDecimal|1<<anotherDigitSpotInDecimal|...)
+
+Sets the specified digits to 1s without changing all other digits
+
+--
+
+BIC op1, op1, #(1<<digitSpotInDecimal|1<<anotherDigitSpotInDecimal|...)
+
+Sets the specified digits to 0s without changing all other digits
+
+--
+
 =variableName		// Represents the address of variableName
 
 --
@@ -74,6 +94,93 @@ BVS			Branch if signed overflow
 BVC			Branch if no signed overflow
 BHI			Branch if unsigned higher
 BLS			Branch if unsigned lower or equal
+
+
+--
+
+Shift,			Description
+
+LSL			shifts bits to the left
+//Add more shift stuff here
+
+--
+
+Registers,	Purpose
+
+R0		General Purpose
+R1		General Purpose
+R2		General Purpose
+R3		General Purpose
+R4		General Purpose
+R5		General Purpose
+R6		General Purpose
+R7		General Purpose
+R8		General Purpose
+R9		General Purpose
+R10		General Purpose
+R11		General Purpose
+R12		General Purpose
+R13		Stack Pointer, Stores the address of the top of the stack
+R14		link Register, Stores return address for subroutines
+R15		Program Counter, Address of next instruction
+
+--
+
+Subroutines
+************
+
+BL	procName	// Branch-Link to procName
+
+
+procName:
+
+// Procedure Code Executed Here
+
+BX	lr		// Branch to Return Address in Link-Register
+
+
+
+
+Nested Procedures
+******************
+
+  BL	procName	// Branch-Link to procName
+  
+  B   finishedProc
+
+  
+  procName:
+
+// Procedure Code Executed Here
+
+    PUSH {R0, R1, R2, LR}
+
+    BL	nestProcName
+
+    POP	{R0, R1, R2, LR}	// Pop Registers and Branch to Return
+                                // Address in Link-Register
+    BX	LR  
+
+
+    nestProcName:
+    
+    // Execute Nested Procedure Code Here
+
+    BX    LR
+    
+    endOfNestedProc:
+
+
+  finishedProc:
+
+
+
+
+
+
+
+
+
 
 
 
