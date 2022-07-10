@@ -326,17 +326,28 @@ Fills in a previously created vector with values that increment from beginning t
 Pointers and References
 ************************
 
-dataType* addressName = value;
+dataType* addressName = &variableName;
 
 dataType* addressName = NULL;
 
-Uses an address identified by addressName and stores a value.
+dataType* addressName = 0;
+
+dataType* addressName;
+
+
+Stores the address of variableName as a value in addressName.
+
+More specifically, it allocates a number of bytes to contain the
+value of variableName and stores the address of the first byte 
+in addressName.
+
+Initializing to NULL is the same as initializing to 0.
 
 ---
 
-addressName = &varName;
+&varName;
 
-Replaces the address identified by addressName with the address in varName. 
+Returns the address of varName. 
 The '&' is the reference operator, returning the address.
 
 ---
@@ -348,23 +359,23 @@ The '*' is the de-reference operator, returning the value from an address.
 
 ---
 
-dataType& varName
-
-Returns the address of varName.
-Can be used in arguments.
-
----
-
-int **pointerVar
-
-Returns the value pointed by the variable pointed by pointerVar.
-Dereferences a pointer to a pointer.
-
----
-
 In other words: 
 
 '&' means "return the address" and '*' means "return the value".
+
+---
+
+int **addressName;
+
+Creates a pointer to another pointer to a variable.
+Can create longer series of pointers by adding more '*' operators.
+
+---
+
+**addressName
+
+Returns the value of a variable pointed by a series of two pointers.
+Can return longer series of pointers by adding more '*' operators.
 
 ---
 
