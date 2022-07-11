@@ -494,8 +494,7 @@ functionAccessModifier:
 
 		}
 
-	returnType functionName( ...) const	// Constant functions cannot change
-						// data members in the same class
+	const returnType functionName( ...) const
 		{
 
 		// Block of statements that execute if function is called..
@@ -503,6 +502,9 @@ functionAccessModifier:
 		return variableName;
 
 		}
+
+		// Constant functions are read only for data members
+		// while non-constant functions are read/write.
 };
 
 
@@ -591,6 +593,23 @@ std::istream& operator >>(std::istream& in, const className& objectName)
 }
 
 ---
+
+void functionName(dataType* parameterName, ...) // Pass by Pointer
+		{
+
+		// Passes the address of parameterName.
+		// Changes to parameterName are permanent.
+
+		}
+
+void functionName(dataType& parameterName, ...) // Pass by Reference
+		{
+
+		// Passes the value of parameterName using the address.
+		// Changes to parameterName are permanent.
+
+		}
+
 
 
 Linear Data Structures
