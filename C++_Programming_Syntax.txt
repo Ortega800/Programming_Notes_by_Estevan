@@ -166,10 +166,11 @@ unsigned long int
 float				1.17549e-38 to 3.40282e+38
 double
 long double			3.3621e-4932 to 1.18973e+4932
-bool				0 for false, 1 for true
+bool				0 if false, 1 if true
 char				Ascii character
 const (dataType)		Creates an unchangable value
 auto				Compiler infers the variableType
+
 static (dataType)		Only one copy of this data is shared among
 				all objects of its' class. It is initialized
 				in the start of the program and is only visible
@@ -225,15 +226,15 @@ Strings
 
 std::string stringName;
 
-std:: string stringName = "Hello";
+std::string stringName = "Hello";
 
-Creates a string variable named stringName
+Creates a string variable named stringName.
 
 ---
 
 std::stod(doubleVar);
 
-converts string to double
+converts string to double.
 
 ---
 
@@ -243,17 +244,24 @@ stringNameThree = stringNameTwo + stringNameOne;	// Concatination
 
 Other overloaded operators: []  +=  ==  <  <=  >  >=  !=  <<  >>
 
+
 Other functions:  
 
-stringName.capacity();
+stringName.capacity();		// Returns size of allocated storage.
 
-stringName.length();
+stringName.substr(indexOne, indexTwo);	// Returns the sub-string from indexOne to indexTwo.
 
-stringName.substr(int, int);
+stringName.find(int, subStr);	// Returns the index of the sub-string found in stringName
 
-stringName.findchar(int, char);
+stringName[index];		// Returns the char in the index of the string.
 
-stringName.size();		// Returns the length of stringName
+stringName.insert(index, str);	// Inserts string in index of stringName.
+
+stringName.size();		// Returns the length of stringName.
+
+stringName.length();		// Returns the length of stringName.
+				// Length and size do the same thing
+				// for strings.
 
 
 Arrays and Vectors
@@ -497,6 +505,17 @@ functionAccessModifier:
 		}
 };
 
+
+---
+
+className::funcName(argOne, argTwo, ...)	// Creates a static member function
+{
+	// Execute function code here...
+}
+
+// A single copy of static member functions are created and are used for every
+// object in the entire class. Static member functions can only access 
+// static data members or other static functions.
 
 ---
 
