@@ -601,6 +601,10 @@ void functionName(dataType* parameterName, ...) // Pass by Pointer
 		// Changes to parameterName are permanent.
 
 		}
+functionName(&argName);	// Call by pointer
+			// A NULL value can be used in argName to mean 'nothing'.
+
+
 
 void functionName(dataType& parameterName, ...) // Pass by Reference
 		{
@@ -609,15 +613,13 @@ void functionName(dataType& parameterName, ...) // Pass by Reference
 		// Changes to parameterName are permanent.
 
 		}
-
+functionName(argName);	// Call by reference
 
 
 Linear Data Structures
 ***********************
 
 Stacks, Recursion, Queues, Collection ADT, List ADT (Linked lists, Doubly Linked Lists, Circularly Linked Lists), Skip List, MAP ADT, Hash Tables, Hash Tables with Utilize Linked Lists, Sorting (Quicksort, Shell Sort, Insertion Short, Bubble Sort), and Searching
-
-
 
 
 
