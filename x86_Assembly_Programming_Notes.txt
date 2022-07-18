@@ -345,9 +345,9 @@ bytes,  words,  doublewords, Description
 
 MOVSB	MOVSW	MOVSD	     Copy data from memory addressed by ESI to memory addressed by EDI
 CMPSB	CMPSW	CMPSD	     Compare contents of two memory locations addressed by ESI and EDI
-SCASB	SCASW	SCASD	     Compare the accumulator to the contents of memory addressed by EDI
+SCASB	SCASW	SCASD	     Compare the accumulator to the contents of memory addressed by EDI and increments EDI
 STOSB	STOSW	STOSD	     Store the accumulator contents into memory addressed by EDI
-LODSB	LODSW	LODSD	     Load memory addressed by ESI into the accumulator
+LODSB	LODSW	LODSD	     Load memory addressed by ESI into the accumulator and increment ESI
 
 ---
 
