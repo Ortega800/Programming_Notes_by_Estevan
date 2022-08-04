@@ -342,6 +342,8 @@ dataType* addressName = 0;
 
 dataType* addressName;
 
+dataType *addressName;
+
 
 Stores the address of variableName as a value in addressName.
 
@@ -614,6 +616,46 @@ void functionName(dataType& parameterName, ...) // Pass by Reference
 
 		}
 functionName(argName);	// Call by reference
+
+
+
+Templates
+**********
+
+template <typename nameOne, typename nameTwo, ... >
+
+nameOne functionName(nameOne x, nameTwo y, ...)
+{
+	// Function code here...
+
+	return nameOne;
+}
+
+
+
+----------
+
+
+// To call a template implemented function
+
+functionName<dataTypeOne, DataTypeTwo, ...>(varOne, varTwo, ...)
+
+
+---------
+
+// Example
+
+template <typename x, typename y>
+x add(T x, T y)
+{
+	return (x + y);
+}
+
+int main()
+{
+	int newVariable = add<int, double>(3, 4.2);
+}
+
 
 
 Linear Data Structures
