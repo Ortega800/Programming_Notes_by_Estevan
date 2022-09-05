@@ -325,7 +325,7 @@ Returns the size of the vector.
 
 ---
 
-std::iota(std::begin(vectorNmae), std::end(vectorName), startingValue);
+std::iota(std::begin(vectorName), std::end(vectorName), startingValue);
 
 Fills in a previously created vector with values that increment from beginning to the end.
 
@@ -655,6 +655,97 @@ int main()
 {
 	int newVariable = add<int, double>(3, 4.2);
 }
+
+
+Output Formatting
+******************
+
+#include <iostream>
+#include <iomanip>
+
+---
+
+cout << setprecision(3) << 12.34;
+// Output: 12.3
+
+// Sets the max number of digits to be displayed.
+// Does not show zeros after the decimal point by default.
+// Precision for floating point number is set to six by default.
+
+---
+
+cout << fixed << 12.34;		
+// Output: 12.340000
+
+// Set precision to mean the digits after the decimal point.
+// Cannot be set to 'scientific' at the same time.
+
+---
+
+cout << scientific << 12.34;
+// Output: 1.234000e+01
+
+---
+
+cout << fixed << setprecision(1) << 12.34;	
+// Output: 12.3	
+
+// Sets the max number of digits after the decimal point.
+
+---
+
+cout << scientific << setprecision(1) << 12.34;
+// Output: 1.2e+01
+
+// Sets the max number of digits after the decimal point.
+// Cannot be set to 'fixed' at the same time.
+
+---
+
+cout << setprecision(3) << showpoint << 99.0;
+// Output: 12.0
+
+// Allows zeros to be displayed after the decimal point.
+// Using 'noshowpoint' will not display zeros after the decimal point.
+
+------
+
+cout << setw(4) << "Hi" << endl;
+// Output: "  Hi"
+
+// Sets the size of the string to be outputted.
+// Right aligned by default.
+// Space char used for fill as default.
+
+---
+
+cout << setfill('$') << setw(4) << "Hi" << endl;
+// Output: "$$Hi"
+
+// Changes the char that will be used as filler.
+
+---
+
+cout << left << setw(4) << "Hi" << endl;
+// Output: "Hi  "
+
+// Changes to left alignment.
+// Using 'right' will instead change to right alignment.
+
+---
+
+// When cout or cin is being written to, the data is 
+// temporarily stored in a block of data called a buffer.
+
+// 'Flushing the buffer' is the action of sending the data temporarilty 
+// stored in the buffer to memory such as the console, file, variables, etc.
+
+cout << endl;
+// Outputs newline, and flushes the buffer.
+
+cout << flush;
+// Flushes the buffer.
+
 
 
 
