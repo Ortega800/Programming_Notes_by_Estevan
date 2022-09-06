@@ -264,8 +264,8 @@ stringName.length();		// Returns the length of stringName.
 				// for strings.
 
 
-Arrays and Vectors
-*******************
+Arrays
+*******
 
 dataType arrayName[numOfElements] = {firstValue, secondValue, thirdValue, ...};
 
@@ -301,27 +301,63 @@ Returns the size of the data in the first index of the array in bytes.
 
 ---
 
+arrayName[index] = value;
+
+assigns a value to a specified place in the array.
+
+
+Vectors
+********
+
 std::vector<dataType> vectorName(numofElements);
 
 Creates a vector.
 
 ---
 
-vectorName[elementIndex] = value;
+vectorName[index] = value;
 
-assigns a value to a specified place in the vector.
+vectorName.at(index) = value;
+
+Assigns a value to a specified place in the vector.
 
 ---
 
 vectorName.push_back(value);
 
-extends the tail end of the vector to append the value.
+Extends the tail end of the vector to append the value.
 
 ---
 
 vectorName.size()
 
 Returns the size of the vector.
+
+---
+
+vectorName.erase(index);
+
+Removes element from specified index, shifts elements greater then index back, 
+and decrements vector size.
+
+---
+
+vectorName.insert(index, value);
+
+Shifts elements greater then index forward 
+and stores value into specified index.
+
+---
+
+vectorName.clear();
+
+Removes all elements and vector size becomes zero.
+
+---
+
+vectorName.empty();
+
+Returns true if vector size is zero and false if otherwise.
 
 ---
 
