@@ -335,14 +335,14 @@ Returns the size of the vector.
 
 ---
 
-vectorName.erase(index);
+vectorName.erase(vectorName.begin() + index);
 
 Removes element from specified index, shifts elements greater then index back, 
 and decrements vector size.
 
 ---
 
-vectorName.insert(index, value);
+vectorName.insert(vectorName.begin() + index, value);
 
 Shifts elements greater then index forward 
 and stores value into specified index.
