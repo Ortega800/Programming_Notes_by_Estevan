@@ -482,9 +482,42 @@ outStreamName << varName;	// Writes varName to file
 
 ---
 
+streamName.fail();		// Returns true if the previous read or write
+				// from a file resulted in a logical error.
+
+streamName.eof();		// Returns true if end of file is reached.
+
+
+streamName.bad();		// Returns true if further errors in the
+				// stream are expected due to previous
+				// read and write errors.
+
+streamName.good();		// Returns true if no stream errors
+				// have occured.
+
+streamName.clear();		// Clears the flags and replaces the
+				// stream state as 'good'.
+
+---
+
+getline(streamName, stringName);
+
+Stores the next line from streamName into stringName.
+
+---
+
 streamName.peek()	// Returns the next char
 
 streamName.eof()	// Returns true if at end of file
+
+---
+
+streamName.ignore(streamSizeNumber, endOfIgnoreChar)
+
+// Ignores characters in the stream until the endOfIgnoreChar is reached.
+// Only works for the number of characters up to the streamSizeNumber.
+
+
 
 ---
 
