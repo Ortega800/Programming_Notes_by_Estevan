@@ -251,7 +251,8 @@ stringName.capacity();		// Returns size of allocated storage.
 
 stringName.substr(indexOne, indexTwo);	// Returns the sub-string from indexOne to indexTwo.
 
-stringName.find(int, subStr);	// Returns the index of the sub-string found in stringName
+stringName.find(int, subStr);	// Returns the index of the sub-string 
+				// found in stringName
 
 stringName[index];		// Returns the char in the index of the string.
 
@@ -262,6 +263,8 @@ stringName.size();		// Returns the length of stringName.
 stringName.length();		// Returns the length of stringName.
 				// Length and size do the same thing
 				// for strings.
+
+stringName.push_back('charVar'); // appends charVar to the tail end of the string.
 
 
 Arrays
@@ -497,6 +500,12 @@ streamName.good();		// Returns true if no stream errors
 
 streamName.clear();		// Clears the flags and replaces the
 				// stream state as 'good'.
+
+---
+
+streamName >> std::noskipws;
+
+Does not skip white space when reading a file.
 
 ---
 
