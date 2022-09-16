@@ -695,6 +695,12 @@ void functionName(dataType& parameterName, ...) // Pass by Reference
 		}
 functionName(argName);	// Call by reference
 
+---
+
+className::className() : varOne(valueOne), varTwo(valueTwo), ...{}
+
+Constructors can alternatively initialize variables outside the class definition.
+
 
 
 Templates
