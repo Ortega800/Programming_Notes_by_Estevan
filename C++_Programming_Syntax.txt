@@ -28,7 +28,7 @@ Flags,			Description
 
 clang++ fileName.cpp
 
-Compiles a cource file using the clang++ compiler.
+Compiles a source file using the clang++ compiler.
 
 ---
 
@@ -220,6 +220,23 @@ this->functionName(argOne, argTwo, ...)
 Uses functionName in the class that 'this->' is used in.
 All objects share the same function definition in the code segment.
 
+---
+
+NameSpace::function
+
+NameSpace::class
+
+Namespace::variable
+
+The scope resolution operator '::' specifies which namespace (scope)
+to find the function, class, or variable.
+
+Prevents 'name conflict' for the compiler in which two or more items 
+have the same name and are in different namespaces.
+
+Does not work if two or more items have the same name in
+the same namespace.
+
 
 Strings
 ********
@@ -328,7 +345,7 @@ Assigns a value to a specified place in the vector.
 
 vectorName.push_back(value);
 
-Extends the tail end of the vector to append the value.
+Extends the tail end of the vector to append the value to the end.
 
 ---
 
@@ -391,6 +408,9 @@ value of variableName and stores the address of the first byte
 in addressName.
 
 Initializing to NULL is the same as initializing to 0.
+
+All pointers have a dataType, which determines 
+what type of address is held by the pointer.
 
 ---
 
