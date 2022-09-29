@@ -323,7 +323,13 @@ Returns the size of the data in the first index of the array in bytes.
 
 arrayName[index] = value;
 
-assigns a value to a specified place in the array.
+Assigns a value to a specified place in the array.
+
+---
+
+delete[] arrayName;
+
+De-allocates memory of the array.
 
 
 Vectors
@@ -581,7 +587,7 @@ functionAccessModifier:
 	className::~className()
 		{
 			// Execute de-constructor code here
-			// All remaining memory should be released here
+			// All remaining memory should be de-allocated here
 		}
 
 
@@ -653,6 +659,23 @@ bool operator ==(const className& objectNameOne, const className& objectNameTwo)
 className objectName;
 
 Instantiates an object with a no argument constructor.
+
+---
+
+className *objectName = new className;
+
+className *objectName = new className(parameterOne, parameterTwo, ...);
+
+The 'new' operator returns a pointer to the newly allocated memory of the object.
+Memory is for the object is allocated first, then the constructor is called
+when using the 'new' operator.
+
+---
+
+delete objectName;
+
+The 'delete' operator deallocates the memory of the object.
+Deleting a pointer that references Null does nothing.
 
 ---
 
