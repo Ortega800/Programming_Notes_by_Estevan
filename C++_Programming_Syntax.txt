@@ -97,7 +97,7 @@ Libraries
 #include <numeric>
 #include <ctime>
 #include <fstream>
-#include <>
+#include <chrono>
 #include <>
 #include <>
 
@@ -355,7 +355,7 @@ Extends the tail end of the vector to append the value to the end.
 
 ---
 
-vectorName.size()
+vectorName.size();
 
 Returns the size of the vector.
 
@@ -873,6 +873,24 @@ cout << endl;
 cout << flush;
 // Flushes the buffer.
 
+chrono
+*******
+
+// Stores the clock time into start.
+
+auto start = std::chrono::high_resolution_clock::now();
+
+// Stores the clock time in stop.
+
+auto stop = std::chrono::high_resolution_clock::now();
+
+// Stores the difference between start and stop in duration.
+
+auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(stop - start);
+
+// Returns the difference in milliseconds as a double.
+
+((double)duration.count()) / (double)1000000;
 
 
 

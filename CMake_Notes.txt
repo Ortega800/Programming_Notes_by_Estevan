@@ -1,0 +1,120 @@
+CMake
+******
+
+"There is no standards for CMake"
+
+CMakeLists.txt is the top level file. 
+Aka the Root folder for CMake.
+
+Must tell CMakeLists.txt needs to know where your 
+source is and where your build folder is.
+
+make directory called build.
+
+
+--
+
+mkdir -p out/build
+
+Creates the out and build directory all in one command.
+
+--
+
+~/projectName/out/build
+
+
+Example of cmake project layout.
+
+--
+
+cmake -S (Path to source folder) -B (path to build folder)
+
+or
+
+cmake -S (Path to source folder)   // Must currently be in build folder
+
+or
+
+cmake -B (path to build folder)
+
+or
+
+cmake (path to source folder)	// Must currently be in build folder
+
+
+This command creates the source and build folder.
+
+--
+
+// This is an example of what could be in the CMakeLists.txt file.
+
+cmake_minimum_required(VERSION 3.13.4)
+
+project(projectName)
+
+add_executable(${PROJECT_NAME} main.cpp moreCode.cpp header.hpp) 
+				
+// CMake will replace 'PROJECT_NAME' with projectName automatically.
+// More .cpp and .hpp files can be added to the 'add-executables()' function.
+
+
+
+
+--
+
+
+In the 'build' folder, enter the command 'make' and 
+the project will build.
+
+It is wise to have one terminal window open to the 'build'
+file to build the project and another terminal window open
+to the 'source' folder to modify the source code.
+
+
+--
+
+To add library folders to your project, 
+copy them into the project folder.
+
+~projectName/libraryFolderName
+
+Create a CMakeLists.txt file in the libraryFolderName if one
+is not alreaady provided.
+
+--
+
+// Type this into the CMakeLists.txt in the 
+// libraryFolderName directory.
+
+add_library(libraryName code.cpp moreCode.cpp libraryHeader.hpp)
+
+--
+
+// Then change the CMakeLists.txt file in the project source file.
+
+cmake_minimum_required(VERSION 3.13.4)
+
+project(projectName)
+
+add_executable(${PROJECT_NAME} main.cpp moreCode.cpp header.hpp) 
+
+add_subdirectory(libraryFolderName)
+
+// Adds the folder to the project.
+
+target_include_directories(${PROJECT_NAME} PUBLIC libraryFolderName)
+
+// Allows the use of '#include <libraryHeader.hpp>' in the project.
+// PUBLIC, PRIVATE, or INTERFACE can be used.
+
+target_link_directories(${PROJECT_NAME} PRIVATE libraryFolderName)
+
+// Specifies paths for the linker to search for libraries.
+// Only works in version 3.13.0 and above.
+
+target_link_libraries(${PROJECT_NAME} libraryName)
+
+// Links the library to the project.
+
+
+
